@@ -1,0 +1,52 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('main.css.twig') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            padding: 1em;
+            margin-left: 1em;
+        }
+        a, #submit {
+            display: inline-block;
+            background-color: #F5F5F5;
+            color: black;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 5px;
+        }
+        a:hover{
+            background-color: #e0e0e0;
+        }
+
+
+    </style>
+
+    <h1>Write the new values for the user $id </h1>
+
+    <form action="{{ path('modified_usuario',{'id':usuario.id} ) }}" method="post">
+
+        ID: <input type="number" name="id" value="{{ usuario.id }}">
+        <br>
+        <br>
+        Email: <input type="text" name="email" value="{{ usuario.email }}">
+        <br>
+        <br>
+        Password: <input type="text" name="password" value="{{ usuario.password }}">
+        <br>
+        <br>
+        <input id="submit" type="submit" value="Submit">
+
+
+    </form>
+{% endblock %}
+

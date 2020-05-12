@@ -1,0 +1,41 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} BD {% endblock %}
+
+
+{% block body %}
+    <style>
+        body{
+            padding: 1em;
+            margin-left: 1em;
+        }
+        a, #submit {
+            display: inline-block;
+            background-color: #F5F5F5;
+            color: black;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 5px;
+        }
+        a:hover{
+            background-color: #e0e0e0;
+        }
+
+
+        h1{
+            text-align: center;
+        }
+    </style>
+
+    <h1>Usuarios</h1>
+    <hr>
+    <h2>User deleted successfully!</h2>
+
+    <a href = "{{ path('usuarios') }}" >Return</a>
+
+{% endblock %}
+
